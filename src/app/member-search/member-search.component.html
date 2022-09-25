@@ -1,0 +1,9 @@
+<div id="search-component">
+  <h4><label for="search-box">社員検索</label></h4>
+  <input #searchBox type="text" id="search-box" (input)="search(searchBox.value)">
+  <ul class="search-result">
+    <li *ngFor="let member of members$ | async">
+      <a routerLink="/detail/{{ member.id }}">{{ member.name }}</a>
+    </li>
+  </ul>
+</div>

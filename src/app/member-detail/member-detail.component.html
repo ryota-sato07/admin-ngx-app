@@ -1,0 +1,13 @@
+<div *ngIf="member">
+  <h2>{{ member.name }}</h2>
+  <div><span>id: </span>{{ member.id }}</div>
+  <div>
+    <label>名前:
+      <input type="text" [(ngModel)]="member.name" placeholder="名前">
+    </label>
+  </div>
+  <div><span>役職: </span>{{ member.position }}</div>
+
+  <button (click)="goBack()">戻る</button>
+  <button (click)="save()">保存</button>
+</div>
