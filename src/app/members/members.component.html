@@ -1,0 +1,25 @@
+<h2>社員一覧</h2>
+<div>
+  <label>社員名:
+    <input type="text" #memberName>
+    <select name="position" #memberPosition>
+      <option value=""></option>
+      <option value="平社員">平社員</option>
+      <option value="役員">役員</option>
+    </select>
+  </label>
+  <button
+    (click)="add(memberName.value, memberPosition.value);
+             memberName.value = ''; memberPosition.value = ''"
+  >追加</button>
+</div>
+
+<ul class="members">
+  <li *ngFor="let member of members">
+    <a routerLink="/detail/{{ member.id }}">
+      <span class="badge">{{ member.id }}</span> {{ member.position }}: {{ member.name }}
+    </a>
+    <button class="delete" title="削除ボタン" (click)="onDelete(member)">x</button>
+  </li>
+</ul>
+

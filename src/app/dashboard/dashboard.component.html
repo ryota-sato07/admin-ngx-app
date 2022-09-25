@@ -1,0 +1,16 @@
+<h3>会社役員</h3>
+<div class="grid grid-pad">
+  <a
+    *ngFor="let member of members"
+    class="col-1-4"
+    routerLink="/detail/{{ member.id }}"
+  >
+    <div class="module member">
+      <h4>{{ member.name }}</h4>
+      <p>{{ member.position }}</p>
+    </div>
+  </a>
+</div>
+
+<!--  社員検索の入力窓 -->
+<app-member-search></app-member-search>
